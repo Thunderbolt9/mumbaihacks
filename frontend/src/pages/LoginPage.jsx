@@ -1,10 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, TextField, Checkbox, FormControlLabel, Link, Box, Typography, Container } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom';
 
 const theme = createTheme();
 
 function LoginPage() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = async () => {
+    // try {
+    //   // Simulate API call for user authentication
+    //   const response = await fetch("https://example.com/api/login", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify({ username, password }),
+    //   });
+
+    //   if (response.ok) {
+    //     const data = await response.json();
+    //     localStorage.setItem("user", JSON.stringify(data)); // Store user data in local storage
+    //     console.log("User logged in and stored in localStorage:", data);
+    //     // Optionally redirect to another page or update UI to reflect logged-in state
+    //   } else {
+    //     console.error("Login failed");
+    //   }
+    // } catch (error) {
+    //   console.error("Error during login:", error);
+    // }
+    navigate('/dashboard');
+  };
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -32,6 +59,7 @@ function LoginPage() {
               name="login"
               autoComplete="login"
               autoFocus
+              onChange={(e) => setUsername(e.target.value)}
             />
             <TextField
               margin="normal"
@@ -42,6 +70,7 @@ function LoginPage() {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={(e) => setPassword(e.target.value)}
             />
             <Button
               type="submit"
@@ -52,6 +81,7 @@ function LoginPage() {
                   backgroundColor: '#45a049'
                 }
               }}
+              onClick={handleLogin}
             >
               Login
             </Button>
