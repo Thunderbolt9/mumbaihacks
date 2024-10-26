@@ -1,0 +1,39 @@
+#root {
+    width: 100%;
+}
+
+button, h3, h2, h4, h1 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background-color: #F8F8F8;
+}
+
+.dashboard {
+    max-width: 100%;
+    top: 0;
+}
+
+.main {
+    padding: 0rem 0.5rem;
+    margin-top: 2rem;
+}
+
+.heading {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.createBtn {
+    padding: 0.2rem 1rem; 
+    background-color: #47E093;
+    border-radius: 5px;
+    cursor: pointer;
+}

@@ -1,0 +1,9 @@
+.hover-element {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Initial box shadow */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  }
+  
+.hover-element:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
